@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -281.4, "left": -170, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 115.8, "left": -19.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 122.8, "left": 499.2, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": 1038.3, "left": -215.3, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": 295.6, "left": 508.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": 430, "left": 508.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": 602.8, "left": 508.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo5", "top": 785.2, "left": 508.8, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 243.2,
+      "left": -479.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr2",
+      "top": 454.4,
+      "left": -498.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "ultrasonic1:GND", "bb1:bn.15", "black", [ "v76.8", "h114" ] ],
+    [ "ultrasonic1:ECHO", "uno:6", "green", [ "v144", "h460", "v-259.2", "h-86.4" ] ],
+    [ "ultrasonic1:TRIG", "uno:7", "green", [ "v172.8", "h498.8", "v-307.2", "h-124.8" ] ],
+    [ "bb1:bn.50", "servo1:GND", "black", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "bb1:bp.4", "red", [ "v9.6", "h-124.8", "v-201.6", "h144", "v-76.8" ] ],
+    [ "servo1:V+", "bb1:bp.48", "red", [ "h-86.4", "v-57.5" ] ],
+    [ "uno:5V", "bb1:bp.16", "red", [ "v38.3", "h-149.8" ] ],
+    [ "bb1:bn.46", "servo2:GND", "green", [ "v0" ] ],
+    [ "bb1:bn.45", "servo3:GND", "green", [ "v0" ] ],
+    [ "bb1:bn.42", "servo4:GND", "green", [ "v0" ] ],
+    [ "bb1:bn.39", "servo5:GND", "green", [ "v0" ] ],
+    [ "bb1:bp.43", "servo2:V+", "green", [ "v450.3", "h152.8" ] ],
+    [ "bb1:bp.40", "servo4:V+", "green", [ "v0" ] ],
+    [ "bb1:bp.36", "servo5:V+", "green", [ "v0" ] ],
+    [ "uno:GND.1", "bb1:bn.21", "black", [ "v0" ] ],
+    [ "bb1:bp.8", "ldr1:VCC", "green", [ "v354.3", "h-269.6" ] ],
+    [ "bb1:bp.6", "ldr2:VCC", "green", [ "v565.5", "h-250.4" ] ],
+    [ "bb1:bn.3", "ldr1:GND", "green", [ "v0" ] ],
+    [ "bb1:bn.5", "ldr2:GND", "green", [ "v0" ] ],
+    [ "uno:9", "servo2:PWM", "green", [ "v0" ] ],
+    [ "uno:10", "servo3:PWM", "green", [ "v0" ] ],
+    [ "servo3:V+", "bb1:bp.41", "green", [ "h-172.8", "v-451.1" ] ],
+    [ "servo4:PWM", "uno:11", "green", [ "h0" ] ],
+    [ "servo5:PWM", "uno:12", "green", [ "h-393.6", "v-729.4" ] ],
+    [ "uno:5", "servo1:PWM", "green", [ "v67.2", "h311" ] ],
+    [ "bb1:1b.j", "ldr1:DO", "green", [ "v0" ] ],
+    [ "bb1:1b.h", "ldr2:DO", "green", [ "v0" ] ],
+    [ "uno:A0", "bb1:1b.g", "green", [ "v0" ] ],
+    [ "ldr1:AO", "bb1:15b.j", "green", [ "h0" ] ],
+    [ "ldr2:AO", "bb1:15b.i", "green", [ "h0" ] ],
+    [ "bb1:15b.h", "uno:A1", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
